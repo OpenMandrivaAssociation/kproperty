@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   kproperty-3.0.0.tar.xz: 9eb6b83c0bb5b62d9c219415bc05a5677fbc3ab3
+sources:
+  kproperty-3.0.2.tar.xz: 9473caa8af19d5606ea52ee87148659626343d5a
