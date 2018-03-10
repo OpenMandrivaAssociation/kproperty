@@ -5,7 +5,7 @@
 
 %define wlibname %mklibname KPropertyWidgets3 %{major}
 %define wdevname %mklibname KPropertyWidgets -d
-%define owlibname %mklibname KpropertyWidgets3 3
+%define owlibname %mklibname KPropertyWidgets3 3
 
 Name:		kproperty
 Version:	3.1.0
