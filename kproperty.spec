@@ -1,11 +1,14 @@
-%define major 3
+%define major 4
 %define libname %mklibname KPropertyCore3 %{major}
 %define devname %mklibname KPropertyCore -d
+%define olibname %mklibname KPropertyCore3 3
+
 %define wlibname %mklibname KPropertyWidgets3 %{major}
 %define wdevname %mklibname KPropertyWidgets -d
+%define owlibname %mklibname KpropertyWidgets3 3
 
 Name:		kproperty
-Version:	3.0.2
+Version:	3.1.0
 Release:	1
 Source0:	http://download.kde.org/stable/%{name}/src/%{name}-%{version}.tar.xz
 Summary:	A property editing framework with editor widget
@@ -34,6 +37,7 @@ A property editing framework with editor widget
 Summary: A property editing framework with editor widget
 Group: System/Libraries
 Requires: %{name} = %{EVRD}
+Obsoletes:  %{olibname}
 
 %description -n %{libname}
 A property editing framework with editor widget
@@ -43,6 +47,7 @@ Summary: A property editing framework with editor widget
 Group: System/Libraries
 Requires: %{name} = %{EVRD}
 Requires: %{libname} = %{EVRD}
+Obsoletes: %{owlibname}
 
 %description -n %{wlibname}
 A property editing framework with editor widget
@@ -78,9 +83,9 @@ KProperty is a property editing framework with editor widget.
 
 %install
 %ninja_install -C build
-#find_lang kproperty --with-qt
+%find_lang kproperty --with-qt --all-name
 
-%files
+%files -f kproperty.lang
 %{_datadir}/kpropertywidgets3
 
 %files -n %{libname}
