@@ -8,8 +8,8 @@
 %define owlibname %mklibname KPropertyWidgets3 3
 
 Name:		kproperty
-Version:	3.1.0
-Release:	3
+Version:	3.2.0
+Release:	1
 Source0:	http://download.kde.org/stable/%{name}/src/%{name}-%{version}.tar.xz
 Patch1:		kproperty-3.0.2-pkgconfig.patch
 Summary:	A property editing framework with editor widget
@@ -29,6 +29,7 @@ BuildRequires:	cmake(KF5GuiAddons)
 BuildRequires:	cmake(KF5WidgetsAddons)
 BuildRequires:	cmake(KF5Config)
 BuildRequires:	cmake(KF5I18n)
+BuildRequires:	doxygen graphviz qt5-assistant
 Requires:	%{libname} = %{EVRD}
 
 %description
@@ -77,6 +78,7 @@ KProperty is a property editing framework with editor widget.
 %prep
 %setup -q
 %apply_patches
+export PATH=%{_libdir}/qt5/bin:$PATH
 %cmake_kde5
 
 %build
@@ -87,7 +89,7 @@ KProperty is a property editing framework with editor widget.
 %find_lang kproperty --with-qt --all-name
 
 %files -f kproperty.lang
-%{_datadir}/kpropertywidgets3
+%{_datadir}/kproperty3
 
 %files -n %{libname}
 %{_libdir}/*Core*.so.%{major}*
@@ -106,3 +108,4 @@ KProperty is a property editing framework with editor widget.
 %{_libdir}/*Widgets*.so
 %{_libdir}/pkgconfig/*Widgets*
 %{_libdir}/cmake/KPropertyWidgets3
+%doc %{_docdir}/qt5/*
