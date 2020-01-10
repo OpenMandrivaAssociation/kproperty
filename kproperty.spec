@@ -77,7 +77,7 @@ KProperty is a property editing framework with editor widget.
 
 %prep
 %setup -q
-%apply_patches
+%autopatch -p1
 export PATH=%{_libdir}/qt5/bin:$PATH
 %cmake_kde5
 
