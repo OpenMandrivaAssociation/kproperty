@@ -13,7 +13,7 @@ Release:	3
 Source0:	http://download.kde.org/stable/%{name}/src/%{name}-%{version}.tar.xz
 Patch1:		kproperty-3.0.2-pkgconfig.patch
 Summary:	A property editing framework with editor widget
-URL:		http://community.kde.org/KReport
+URL:		https://community.kde.org/KReport
 License:	LGPLv2+
 Group:		System/Libraries
 BuildRequires:	cmake(ECM)
